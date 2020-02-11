@@ -82,6 +82,9 @@ Clone this repository in `/wp-content/plugins/`:
 Then go to the __Plugins__ screen in your WordPress admin panel and click the __Activate__ link under _Gravity Forms Iframe_.
 
 ## Changelog
+### 2.0.2
+
+* Added the ability to include custom CSS in the form embed.
 
 ### 2.0.1
 

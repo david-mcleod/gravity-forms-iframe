@@ -56,7 +56,7 @@ class GravityFormsIframe_Addon extends GFAddOn {
 
 		$this->_title       = esc_html__( 'Gravity Forms Iframe Add-On', 'gravity-forms-iframe' );
 		$this->_short_title = esc_html__( 'Iframe', 'gravity-forms-iframe' );
-		$this->_version     = '2.0.1';
+		$this->_version     = '2.0.2';
 		$this->_slug        = 'gfiframe';
 		$this->_path        = $this->plugin->get_basename();
 		$this->_full_path   = $this->plugin->get_file();
@@ -147,6 +147,13 @@ class GravityFormsIframe_Addon extends GFAddOn {
 						'label'   => esc_html__( 'Embed Code', 'gravity-forms-iframe' ),
 						'type'    => 'iframe_embed_code',
 						'name'    => 'embed_code',
+						'tooltip' => '',
+						'class'   => 'fieldwidth-3 field-height-3',
+					),
+					array(
+						'label'   => esc_html__( 'Custom CSS', 'gravity-forms-iframe' ),
+						'type'    => 'textarea',
+						'name'    => 'custom_css',
 						'tooltip' => '',
 						'class'   => 'fieldwidth-3 field-height-3',
 					),

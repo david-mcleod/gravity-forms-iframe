@@ -100,6 +100,7 @@ class GravityFormsIframe_Plugin extends GravityFormsIframe_AbstractPlugin {
 		// @todo Need to convert query string values to boolean.
 		$display_title       = (bool) $args['dt'];
 		$display_description = (bool) $args['dd'];
+		$custom_css = $settings['custom_css'];
 
 		unset( $args );
 		unset( $settings );
