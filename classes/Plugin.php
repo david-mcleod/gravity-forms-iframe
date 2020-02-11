@@ -87,7 +87,7 @@ class GravityFormsIframe_Plugin extends GravityFormsIframe_AbstractPlugin {
 		}
 
 		// Disable the toolbar in case the form is embedded on the same domain.
-		show_admin_bar( false );
+		add_filter( 'show_admin_bar', '__return_false', 100 );
 
 		require_once( GFCommon::get_base_path() . '/form_display.php' );
 
@@ -100,6 +100,7 @@ class GravityFormsIframe_Plugin extends GravityFormsIframe_AbstractPlugin {
 		// @todo Need to convert query string values to boolean.
 		$display_title       = (bool) $args['dt'];
 		$display_description = (bool) $args['dd'];
+		$custom_css = $settings['custom_css'];
 
 		unset( $args );
 		unset( $settings );
@@ -125,20 +126,25 @@ class GravityFormsIframe_Plugin extends GravityFormsIframe_AbstractPlugin {
 			return;
 		}
 		?>
-		<script type="text/javascript">
-		( function( window, $, undefined ) {
-			var $document = $( document );
-
-			$( window ).on( 'message', function( e ) {
-				if ( 0 === e.originalEvent.data.indexOf( 'size?' ) ) {
-					var index = e.originalEvent.data.replace( 'size?', '' ),
-						// size:index:width:height
-						message = 'size:' + index + ',' + document.body.scrollWidth + ',' + $document.height();
-
-					e.originalEvent.source.postMessage( message, e.originalEvent.origin );
+		<script>
+		(function( window, undefined ) {
+			window.addEventListener( 'message', function( e ) {
+				if ( 'size' === e.data.message ) {
+					e.source.postMessage({
+						message: 'size',
+						// @link https://stackoverflow.com/a/1147768
+						height: getBodyHeight(),
+						index: e.data.index,
+						width: document.body.scrollWidth
+					}, e.origin );
 				}
 			});
-		} )( this, jQuery );
+
+			function getBodyHeight() {
+				var styles = getComputedStyle( document.body );
+				return parseInt( styles.height, 10 ) + parseInt( styles.marginTop, 10 ) + parseInt( styles.marginBottom );
+			}
+		})( this );
 		</script>
 		<?php
 

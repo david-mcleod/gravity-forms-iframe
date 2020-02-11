@@ -43,6 +43,11 @@ _**Example:** gfembed/?f=1&dt=0&dd=0_
 
 If the auto-resizing functionality isn't needed for a particular form, adjust the iframe's height attribute to accomodate the form and don't include the `<script>` tag when copying the embed code. Leaving off the script tag will save an HTTP request.
 
+### Confirmation Screen
+
+If you redirect users to another page upon submission and would like the iframe to automatically resize, include the following in the confirmation page:
+`add_filter( 'gfiframe_print_resize_ping_script', '__return_true' );`
+
 ## Template Hierarchy
 
 Templates can be added in a theme or child theme to override the plugin's template. Use the following template names:
@@ -77,6 +82,9 @@ Clone this repository in `/wp-content/plugins/`:
 Then go to the __Plugins__ screen in your WordPress admin panel and click the __Activate__ link under _Gravity Forms Iframe_.
 
 ## Changelog
+### 2.0.2
+
+* Added the ability to include custom CSS in the form embed.
 
 ### 2.0.1
 
