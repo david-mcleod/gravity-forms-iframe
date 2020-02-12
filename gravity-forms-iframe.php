@@ -2,22 +2,22 @@
 /**
  * Gravity Forms Iframe Add-on
  *
- * @package   GravityFormsIframe
- * @copyright Copyright (c) 2016, Cedaro, LLC
+ * @package   GravityFormsIframe-SXM
+ * @copyright Copyright (c) 2019, Saxum
  * @license   GPL-2.0+
  *
  * @wordpress-plugin
- * Plugin Name:       Gravity Forms Iframe Add-on
- * Plugin URI:        https://github.com/cedaro/gravity-forms-iframe
+ * Plugin Name:       Gravity Forms Iframe Add-on (Saxum Fork)
+ * Plugin URI:        https://github.com/Saxum/gravity-forms-iframe
  * Description:       Easily embed Gravity Forms in an auto-resizing iframe on external sites.
- * Version:           2.0.1
- * Author:            Cedaro
- * Author URI:        http://www.cedaro.com/
+ * Version:           2.0.2
+ * Author:            Saxum
+ * Author URI:        http://www.saxum.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       gravity-forms-iframe
  * Domain Path:       /languages
- * GitHub Plugin URI: https://github.com/cedaro/gravity-forms-iframe
+ * GitHub Plugin URI: https://github.com/Saxum/gravity-forms-iframe
  */
 
 /**

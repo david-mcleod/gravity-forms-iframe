@@ -8,8 +8,8 @@ body {
 	padding: 0;
 	font-family: sans-serif;
 	font-size: 13px;
-	<?php echo $custom_css; ?>
 }
+<?php echo $custom_css; ?>
 </style>
 <?php do_action( 'gfiframe_head', $form_id, $form ); ?>
 </head>
