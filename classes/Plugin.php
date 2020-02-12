@@ -126,6 +126,7 @@ class GravityFormsIframe_Plugin extends GravityFormsIframe_AbstractPlugin {
 			return;
 		}
 		?>
+		<!--
 		<script>
 		(function( window, undefined ) {
 			window.addEventListener( 'message', function( e ) {
@@ -146,6 +147,7 @@ class GravityFormsIframe_Plugin extends GravityFormsIframe_AbstractPlugin {
 			}
 		})( this );
 		</script>
+		-->
 		<?php
 
 		do_action( 'gfiframe_form_footer' );

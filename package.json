@@ -14,5 +14,8 @@
     "jshint": "^2.9.2",
     "node-wp-i18n": "github:cedaro/node-wp-i18n#develop",
     "uglify-js": "^2.7.0"
+  },
+  "dependencies": {
+    "iframe-resizer": "^4.2.10"
   }
 }

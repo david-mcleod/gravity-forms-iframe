@@ -11,6 +11,7 @@ body {
 }
 <?php echo $custom_css; ?>
 </style>
+<script type="text/javascript" src="/wp-content/plugins/gravity-forms-iframe-master/assets/scripts/iframeResizer.contentWindow.min.js"></script>
 <?php do_action( 'gfiframe_head', $form_id, $form ); ?>
 </head>
 <body>
