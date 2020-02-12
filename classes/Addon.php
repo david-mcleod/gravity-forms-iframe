@@ -188,7 +188,7 @@ class GravityFormsIframe_Addon extends GFAddOn {
 		$script_url = preg_replace( '#^http(s)?:#', '', $this->plugin->get_url( 'assets/scripts/iframeResizer.min.js' ) );
 
 		$value  = '<iframe src="' . esc_url( $iframe_url ) . '" width="100%" style="width:1px; min-width:100%;" height="500" frameBorder="0" class="gfiframe"></iframe>' . "\n";
-		$value .= '<script src="' . esc_url( $script_url ) . '" type="text/javascript"></script>';
+		$value .= '<script src="' . esc_url( $script_url ) . '" type="text/javascript"></script>'. "\n";
 		$value .= '<script>iFrameResize({ }, ".gfiframe");</script>';
 
 		$tooltip = '';
