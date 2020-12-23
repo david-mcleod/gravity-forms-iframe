@@ -184,12 +184,18 @@ class GravityFormsIframe_Addon extends GFAddOn {
 		$iframe_url = add_query_arg( 'f', $form['id'], $iframe_url );
 		$iframe_url = preg_replace( '#^http(s)?:#', '', $iframe_url );
 
-		// Relative protocol.
-		$script_url = preg_replace( '#^http(s)?:#', '', $this->plugin->get_url( 'assets/scripts/iframeResizer.min.js' ) );
-
-		$value  = '<iframe src="' . esc_url( $iframe_url ) . '" width="100%" style="width:1px; min-width:100%;" height="500" frameBorder="0" class="gfiframe"></iframe>' . "\n";
-		$value .= '<script src="' . esc_url( $script_url ) . '" type="text/javascript"></script>'. "\n";
-		$value .= '<script>iFrameResize({ }, ".gfiframe");</script>';
+		$value  = '<div id="gravityForm"></div>';
+		$value  .= '<script>';
+		$value  .= 'var loc = window.location.toString(), params = loc.split(\'?\')[1] !== undefined ? loc.split(\'?\')[1] : \'\' , iframe;';
+		$value  .= 'iframe = document.createElement(\'iframe\');';
+		$value  .= 'iframe.src = \''. esc_url( $iframe_url ).'\' + params;';
+		$value  .= 'iframe.style.appearance = \'none\';';
+		$value  .= 'iframe.style.minWidth = \'100%\';';
+		$value  .= 'iframe.style.width = \'100%\';';
+		$value  .= 'iframe.height = \'1000px\';';
+		$value  .= 'iframe.frameBorder = \'0\';';
+		$value  .= 'document.getElementById(\'gravityForm\').appendChild(iframe);';
+		$value  .= '</script>';
 
 		$tooltip = '';
 		if ( isset( $choice['tooltip'] ) ) {
