@@ -4,18 +4,24 @@
 <meta charset="utf-8">
 <title><?php echo esc_html( $form['title'] ); ?></title>
 <style type="text/css">
-body {
-	padding: 0;
-	font-family: sans-serif;
-	font-size: 13px;
+html, body {
+  height: auto !important;
+  padding: 0;
+  margin: 0;
+}
+#cookie-law-info-bar {
+  display: none !important;
+}
+ul {
+  padding: 0;
 }
 <?php echo $custom_css; ?>
 </style>
-<script type="text/javascript" src="/wp-content/plugins/gravity-forms-iframe-master/assets/scripts/iframeResizer.contentWindow.min.js"></script>
+<?php wp_head(); ?>
 <?php do_action( 'gfiframe_head', $form_id, $form ); ?>
 </head>
 <body>
-<?php GFFormDisplay::print_form_scripts( $form, false ); // ajax = false ?>
+<script type="text/javascript" src="<?php echo plugin_dir_url( __DIR__ ); ?>assets/scripts/iframeResizer.contentWindow.min.js"></script>
 <?php gravity_form( $form_id, $display_title, $display_description ); ?>
 <?php wp_footer(); ?>
 </body>
