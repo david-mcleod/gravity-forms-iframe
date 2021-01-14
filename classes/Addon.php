@@ -195,9 +195,9 @@ class GravityFormsIframe_Addon extends GFAddOn {
 		$value  .= 'iframe.style.minHeight = \'100%\';';
 		$value  .= 'iframe.style.width = \'100%\';';
 		$value  .= 'iframe.frameBorder = \'0\';';
+		$value  .= 'iframe.classList.add(\'gfiframe\');';
 		$value  .= 'document.getElementById(\'gravityForm\').appendChild(iframe);';
-		$value .= 'iframe.classList.add(\'gfiframe\');';
-		$value .= 'iFrameResize({ }, ".gfiframe");';
+		$value .= 'iframe.onload = iFrameResize({ }, ".gfiframe");';
 		$value  .= '</script>';
 
 		$tooltip = '';
