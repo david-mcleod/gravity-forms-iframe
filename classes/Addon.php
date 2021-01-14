@@ -194,6 +194,7 @@ class GravityFormsIframe_Addon extends GFAddOn {
 		$value  .= 'iframe.style.minWidth = \'100%\';';
 		$value  .= 'iframe.style.minHeight = \'100%\';';
 		$value  .= 'iframe.style.width = \'100%\';';
+		$value  .= 'iframe.style.display = \'block\';';
 		$value  .= 'iframe.frameBorder = \'0\';';
 		$value  .= 'iframe.classList.add(\'gfiframe\');';
 		$value  .= 'document.getElementById(\'gravityForm\').appendChild(iframe);';
