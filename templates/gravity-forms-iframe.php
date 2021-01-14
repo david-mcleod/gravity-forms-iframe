@@ -14,9 +14,6 @@ html, body {
 body {
   padding-bottom: 32px;
 }
-#cookie-law-info-bar {
-  display: none !important;
-}
 ul {
   padding: 0;
 }
