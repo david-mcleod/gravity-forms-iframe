@@ -7,12 +7,12 @@
 <style type="text/css">
 html, body {
   height: auto !important;
-  padding: 0;
+  padding: 10px;
   margin: 0;
   margin-top: 0 !important;
 }
 body {
-  padding-bottom: 32px;
+  padding-bottom: 32px !important;
 }
 #cookie-law-info-bar {
   position: relative !important;
@@ -20,10 +20,15 @@ body {
   box-shadow: 0 0 0 rgba(255,255,255,0) !important;
 }
 body .gform_wrapper .gform_body label.gfield_label, body .gform_wrapper .gform_body legend.gfield_label {
-  font-size: 15px;
+  font-size: 15px !important;
 }
 body .gform_wrapper .gform_body input[type=email], body .gform_wrapper .gform_body input[type=number], body .gform_wrapper .gform_body input[type=tel], body .gform_wrapper .gform_body input[type=text], body .gform_wrapper .gform_body select, body .gform_wrapper .gform_body textarea {
-  height: auto;
+  height: auto !important;
+  line-height: 20px !important;
+  padding: 8px !important;
+}
+body .gform_wrapper .gform_body select {
+  padding: 6px !important;
 }
 ul {
   padding: 0;
