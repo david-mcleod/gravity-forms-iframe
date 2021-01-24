@@ -184,11 +184,22 @@ class GravityFormsIframe_Addon extends GFAddOn {
 		$iframe_url = add_query_arg( 'f', $form['id'], $iframe_url );
 		$iframe_url = preg_replace( '#^http(s)?:#', '', $iframe_url );
 
-		// Relative protocol.
-		$script_url = preg_replace( '#^http(s)?:#', '', $this->plugin->get_url( 'assets/scripts/gfembed.min.js' ) );
-
-		$value  = '<iframe src="' . esc_url( $iframe_url ) . '" width="100%" height="500" frameBorder="0" class="gfiframe"></iframe>' . "\n";
-		$value .= '<script src="' . esc_url( $script_url ) . '" type="text/javascript"></script>';
+    $value  = '<script src="' . plugin_dir_url( __DIR__ ) . 'assets/scripts/iframeResizer.min.js" type="text/javascript"></script>';
+		$value  .= '<div id="gravityForm" style="height: 100%; overflow: auto"></div>';
+		$value  .= '<script>';
+		$value  .= 'var loc = window.location.toString(), params = loc.split(\'?\')[1] !== undefined ? loc.split(\'?\')[1] : \'\' , iframe;';
+		$value  .= 'iframe = document.createElement(\'iframe\');';
+		$value  .= 'iframe.src = \''. esc_url( $iframe_url ).'\' + params;';
+		$value  .= 'iframe.style.appearance = \'none\';';
+		$value  .= 'iframe.style.minWidth = \'100%\';';
+		$value  .= 'iframe.style.minHeight = \'100%\';';
+		$value  .= 'iframe.style.width = \'100%\';';
+		$value  .= 'iframe.style.display = \'block\';';
+		$value  .= 'iframe.frameBorder = \'0\';';
+		$value  .= 'iframe.classList.add(\'gfiframe\');';
+		$value  .= 'document.getElementById(\'gravityForm\').appendChild(iframe);';
+		$value .= 'iframe.onload = iFrameResize({ }, ".gfiframe");';
+		$value  .= '</script>';
 
 		$tooltip = '';
 		if ( isset( $choice['tooltip'] ) ) {
